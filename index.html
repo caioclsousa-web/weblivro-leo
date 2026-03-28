@@ -36,9 +36,9 @@
   --radius: 24px;
   --page-max: 480px;
 }
- 
+
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
- 
+
 html, body {
   height:100%; overflow:hidden;
   background: var(--sky);
@@ -46,7 +46,7 @@ html, body {
   color: var(--text);
   touch-action: pan-y;
 }
- 
+
 /* ===== COVER ===== */
 .cover {
   position:fixed; inset:0; z-index:100;
@@ -78,7 +78,7 @@ html, body {
 }
 .btn-start:hover { transform:scale(1.05); }
 .btn-start:active { transform:scale(0.97); }
- 
+
 /* ===== LOADING ===== */
 .loading-overlay {
   position:fixed; inset:0; z-index:150;
@@ -94,15 +94,15 @@ html, body {
 }
 @keyframes spin { to{transform:rotate(360deg)} }
 .loading-text { font-family:'Baloo 2',cursive; color:var(--lion-dark); font-size:1.1rem; }
- 
+
 /* ===== BOOK ===== */
 .book { position:fixed; inset:0; display:flex; flex-direction:column; opacity:0; transition:opacity 0.5s ease; }
 .book.active { opacity:1; }
- 
+
 /* ===== PROGRESS ===== */
 .progress-bar { position:relative; height:6px; background:rgba(74,55,40,0.08); flex-shrink:0; z-index:10; }
 .progress-fill { height:100%; background:linear-gradient(90deg,var(--lion),var(--sun)); border-radius:0 3px 3px 0; transition:width 0.5s cubic-bezier(0.4,0,0.2,1); }
- 
+
 /* ===== PAGES ===== */
 .pages-wrapper { flex:1; overflow:hidden; position:relative; }
 .page {
@@ -113,7 +113,7 @@ html, body {
 .page.active { opacity:1; transform:translateX(0); pointer-events:auto; }
 .page.exit-left { opacity:0; transform:translateX(-60px); }
 .page-inner { width:100%; max-width:var(--page-max); display:flex; flex-direction:column; align-items:center; padding-bottom:1rem; }
- 
+
 /* ===== ILLUSTRATION ===== */
 .illustration {
   width:100%; aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden;
@@ -125,24 +125,24 @@ html, body {
   opacity:0; transition:opacity 0.4s ease;
 }
 .illustration img.loaded { opacity:1; }
- 
+
 .page-num {
   position:absolute; top:12px; right:12px; background:var(--white); color:var(--lion-dark);
   font-family:'Baloo 2',cursive; font-size:0.75rem; font-weight:700;
   width:28px; height:28px; display:flex; align-items:center; justify-content:center;
   border-radius:50%; box-shadow:0 2px 8px var(--shadow); z-index:2;
 }
- 
+
 /* ===== TEXT ===== */
 .story-text {
   font-family:'Baloo 2',cursive; font-size:clamp(1.15rem,4.5vw,1.5rem);
   line-height:1.55; text-align:center; color:var(--text); padding:0 0.5rem; margin-bottom:1rem;
 }
 .story-text em { color:var(--lion-dark); font-style:normal; font-weight:700; }
- 
+
 /* ===== INTERACTIONS ===== */
 .interaction { width:100%; max-width:var(--page-max); margin-bottom:1rem; }
- 
+
 .quiz-container { display:flex; flex-direction:column; gap:0.75rem; padding:0 0.5rem; }
 .quiz-title { font-family:'Baloo 2',cursive; font-size:1rem; text-align:center; color:var(--text-light); margin-bottom:0.25rem; }
 .quiz-btn {
@@ -164,7 +164,7 @@ html, body {
 .quiz-feedback.show { opacity:1; transform:translateY(0); }
 .quiz-feedback.correct { background:var(--happy); color:#2E5E30; }
 .quiz-feedback.wrong { background:#FFF0F0; color:#8B3A3A; }
- 
+
 .speech-practice { display:flex; flex-direction:column; align-items:center; gap:0.75rem; padding:1rem; }
 .speech-bubble {
   background:var(--white); border:3px solid var(--lion); border-radius:20px;
@@ -179,7 +179,7 @@ html, body {
   width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-top:10px solid var(--lion);
 }
 .speech-hint { font-size:0.8rem; color:var(--text-light); opacity:0.7; }
- 
+
 .breathing-exercise { display:flex; flex-direction:column; align-items:center; gap:1rem; padding:1rem; }
 .breath-circle {
   width:120px; height:120px; border-radius:50%;
@@ -191,7 +191,7 @@ html, body {
 @keyframes breathe { 0%,100%{transform:scale(1)} 33%{transform:scale(1.35)} 66%{transform:scale(1.35)} }
 .breath-label { font-family:'Baloo 2',cursive; font-size:1.1rem; color:var(--text-light); min-height:1.6rem; }
 .breath-hint { font-size:0.8rem; color:var(--text-light); opacity:0.6; }
- 
+
 /* ===== NAV ===== */
 .bottom-nav {
   flex-shrink:0; padding:0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom,0px));
@@ -209,7 +209,7 @@ html, body {
 .nav-btn.next { background:var(--lion); color:var(--white); box-shadow:0 4px 20px rgba(244,162,97,0.4); flex:1; max-width:240px; }
 .nav-btn.next:hover { background:var(--lion-dark); }
 .nav-btn.hidden { opacity:0; pointer-events:none; }
- 
+
 /* ===== NARRATE ===== */
 .narrate-btn {
   position:fixed; top:16px; right:16px; z-index:20; width:44px; height:44px;
@@ -220,7 +220,7 @@ html, body {
 .narrate-btn:active { transform:scale(0.95); }
 .narrate-btn.speaking { background:var(--lion); animation:pulse-ring 1.5s ease-in-out infinite; }
 @keyframes pulse-ring { 0%,100%{box-shadow:0 0 0 0 rgba(244,162,97,0.4)} 50%{box-shadow:0 0 0 10px rgba(244,162,97,0)} }
- 
+
 /* ===== END SCREEN ===== */
 .end-screen {
   position:fixed; inset:0; z-index:100; display:flex; flex-direction:column;
@@ -241,7 +241,7 @@ html, body {
 }
 .btn-restart:hover { transform:scale(1.05); }
 .btn-restart:active { transform:scale(0.97); }
- 
+
 /* ===== PAGE BGs ===== */
 .page[data-bg="sunny"]   { background:linear-gradient(180deg,var(--sky) 0%,var(--sun-soft) 100%); }
 .page[data-bg="play"]    { background:linear-gradient(180deg,var(--sun-soft) 0%,var(--grass) 100%); }
@@ -253,14 +253,14 @@ html, body {
 .page[data-bg="breathe"] { background:linear-gradient(180deg,var(--happy) 0%,var(--sky) 100%); }
 .page[data-bg="joy"]     { background:linear-gradient(180deg,var(--sun-soft) 0%,var(--grass) 100%); }
 .page[data-bg="end"]     { background:linear-gradient(180deg,var(--sun-soft) 0%,var(--happy) 100%); }
- 
+
 @keyframes fadeInUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 .page.active .story-text { animation:fadeInUp 0.5s ease 0.15s both; }
 .page.active .illustration { animation:fadeInUp 0.4s ease both; }
 .page.active .interaction { animation:fadeInUp 0.5s ease 0.3s both; }
- 
+
 #confetti { position:fixed; inset:0; z-index:200; pointer-events:none; }
- 
+
 @media (min-height:750px) { .illustration { aspect-ratio:16/10; } }
 @media (max-height:600px) {
   .illustration { aspect-ratio:16/8; margin-bottom:0.75rem; }
@@ -269,13 +269,13 @@ html, body {
 </style>
 </head>
 <body>
- 
+
 <!-- LOADING -->
 <div class="loading-overlay" id="loadingOverlay">
   <div class="loading-spinner"></div>
   <div class="loading-text">Preparando a história do Léo...</div>
 </div>
- 
+
 <!-- COVER -->
 <div class="cover" id="cover" style="display:none">
   <div class="cover-icon">🦁</div>
@@ -284,57 +284,57 @@ html, body {
   <div class="age-badge">📚 Para crianças de 2 a 5 anos</div>
   <button class="btn-start" onclick="startBook()">Começar! ▶</button>
 </div>
- 
+
 <!-- NARRATION -->
 <button class="narrate-btn" id="narrateBtn" onclick="toggleNarration()" title="Ouvir história" style="display:none">🔊</button>
- 
+
 <!-- BOOK -->
 <div class="book" id="book">
   <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
   <div class="pages-wrapper">
- 
+
     <div class="page" data-bg="sunny" data-page="1">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">1</span><img data-src="page1.webp" alt="Léo brincando com amigos"></div>
         <div class="story-text">Este é o <em>Léo</em>. Léo é um leãozinho muito divertido. Ele gosta de brincar com seus amigos!</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="play" data-page="2">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">2</span><img data-src="page2.webp" alt="Léo brincando, mas algo muda"></div>
         <div class="story-text">Léo brincava, corria e ria... Mas às vezes algo acontecia...</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="tense" data-page="3">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">3</span><img data-src="page3.webp" alt="Léo frustrado"></div>
         <div class="story-text">Quando ficava bravo ou frustrado... Léo usava a boca para <em>morder</em>!</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="sad" data-page="4">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">4</span><img data-src="page4.webp" alt="Amigo triste, Léo preocupado"></div>
         <div class="story-text">Ai! Isso <em>machucava</em> os amigos. E eles ficavam tristes...</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="think" data-page="5">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">5</span><img data-src="page5.webp" alt="Léo sozinho e pensativo"></div>
         <div class="story-text">Léo não queria machucar ninguém... Mas não sabia o que fazer.</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="teach" data-page="6">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">6</span><img data-src="page6.webp" alt="Professor conversando com Léo"></div>
         <div class="story-text">Então a professora disse:<br>"Léo, sua boca é para <em>falar</em>, não para morder."</div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="talk" data-page="7">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">7</span><img data-src="page7.webp" alt="Léo usando palavras"></div>
@@ -350,7 +350,7 @@ html, body {
         </div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="breathe" data-page="8">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">8</span><img data-src="page8.webp" alt="Léo respirando fundo"></div>
@@ -364,7 +364,7 @@ html, body {
         </div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="joy" data-page="9">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">9</span><img data-src="page9.webp" alt="Amigos brincando felizes"></div>
@@ -379,22 +379,22 @@ html, body {
         </div>
       </div>
     </div>
- 
+
     <div class="page" data-bg="end" data-page="10">
       <div class="page-inner">
         <div class="illustration"><span class="page-num">10</span><img data-src="page10.webp" alt="Léo feliz com todos os amigos"></div>
         <div class="story-text">Agora Léo já sabe:<br><em>Boca é para falar, sorrir e pedir ajuda.</em><br>Não para morder!</div>
       </div>
     </div>
- 
+
   </div>
- 
+
   <div class="bottom-nav">
     <button class="nav-btn prev hidden" id="btnPrev" onclick="prevPage()">◀</button>
     <button class="nav-btn next" id="btnNext" onclick="nextPage()">Próximo ▶</button>
   </div>
 </div>
- 
+
 <!-- END SCREEN -->
 <div class="end-screen" id="endScreen">
   <div class="end-icon">🦁🌟</div>
@@ -404,23 +404,23 @@ html, body {
   <p style="font-size:0.85rem;opacity:0.7">Leia de novo quantas vezes quiser 💛</p>
   <button class="btn-restart" onclick="restartBook()">Ler de novo 🔄</button>
 </div>
- 
+
 <canvas id="confetti"></canvas>
- 
+
 <script>
 // ===== STATE =====
 let currentPage = 0;
 const totalPages = 10;
 let isSpeaking = false;
 let breathTimer = null;
- 
+
 const pages = document.querySelectorAll('.page');
 const progressFill = document.getElementById('progressFill');
 const btnPrev = document.getElementById('btnPrev');
 const btnNext = document.getElementById('btnNext');
 const narrateBtn = document.getElementById('narrateBtn');
 const endScreen = document.getElementById('endScreen');
- 
+
 const storyTexts = [
   "Este é o Léo. Léo é um leãozinho muito divertido. Ele gosta de brincar com seus amigos!",
   "Léo brincava, corria e ria... Mas às vezes algo acontecia...",
@@ -433,15 +433,15 @@ const storyTexts = [
   "Os amigos sorriram! Brincar ficou muito mais legal!",
   "Agora Léo já sabe: Boca é para falar, sorrir e pedir ajuda. Não para morder!"
 ];
- 
+
 // ===== IMAGE PRELOADER =====
 function preloadImages() {
   const images = document.querySelectorAll('img[data-src]');
   let loaded = 0;
   const total = images.length;
- 
+
   if (total === 0) { showCover(); return; }
- 
+
   images.forEach(img => {
     const src = img.getAttribute('data-src');
     img.onload = () => {
@@ -457,18 +457,18 @@ function preloadImages() {
     };
     img.src = src;
   });
- 
+
   // Timeout fallback
   setTimeout(showCover, 5000);
 }
- 
+
 function showCover() {
   const loader = document.getElementById('loadingOverlay');
   const cover = document.getElementById('cover');
   loader.classList.add('hidden');
   cover.style.display = 'flex';
 }
- 
+
 // ===== BOOK FLOW =====
 function startBook() {
   document.getElementById('cover').classList.add('hidden');
@@ -476,21 +476,21 @@ function startBook() {
   narrateBtn.style.display = 'flex';
   showPage(0);
 }
- 
+
 function showPage(idx) {
   if ('speechSynthesis' in window) speechSynthesis.cancel();
   isSpeaking = false; narrateBtn.classList.remove('speaking'); narrateBtn.textContent = '🔊';
- 
+
   pages.forEach((p, i) => {
     p.classList.remove('active', 'exit-left');
     if (i < idx) p.classList.add('exit-left');
   });
   pages[idx].classList.add('active');
   currentPage = idx;
- 
+
   progressFill.style.width = ((idx + 1) / totalPages * 100) + '%';
   btnPrev.classList.toggle('hidden', idx === 0);
- 
+
   if (idx === totalPages - 1) {
     btnNext.textContent = 'Fim! 🌟';
     btnNext.onclick = showEnd;
@@ -499,17 +499,17 @@ function showPage(idx) {
     btnNext.onclick = nextPage;
   }
 }
- 
+
 function nextPage() { if (currentPage < totalPages - 1) showPage(currentPage + 1); }
 function prevPage() { if (currentPage > 0) showPage(currentPage - 1); }
- 
+
 function showEnd() {
   document.getElementById('book').classList.remove('active');
   narrateBtn.style.display = 'none';
   endScreen.classList.add('active');
   launchConfetti();
 }
- 
+
 function restartBook() {
   endScreen.classList.remove('active');
   document.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
@@ -522,7 +522,7 @@ function restartBook() {
   narrateBtn.style.display = 'flex';
   showPage(0);
 }
- 
+
 // ===== NARRATION =====
 function toggleNarration() {
   if (!('speechSynthesis' in window)) return;
@@ -540,7 +540,7 @@ function toggleNarration() {
   isSpeaking = true; narrateBtn.classList.add('speaking'); narrateBtn.textContent = '⏸️';
 }
 if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
- 
+
 // ===== QUIZ =====
 function handleQuiz(btn, correct) {
   const container = document.getElementById('quizContainer');
@@ -560,7 +560,7 @@ function handleQuiz(btn, correct) {
     }, 1800);
   }
 }
- 
+
 // ===== BREATHING =====
 function startBreathing() {
   const circle = document.getElementById('breathCircle');
@@ -578,7 +578,7 @@ function startBreathing() {
     if (breathTimer) { clearInterval(breathTimer); breathTimer = null; }
   }, 18000);
 }
- 
+
 // ===== SPEAK =====
 function speakPhrase(text) {
   if (!('speechSynthesis' in window)) return;
@@ -590,7 +590,7 @@ function speakPhrase(text) {
   if (ptVoice) utter.voice = ptVoice;
   speechSynthesis.speak(utter);
 }
- 
+
 // ===== CONFETTI =====
 function launchConfetti() {
   const canvas = document.getElementById('confetti');
@@ -626,7 +626,7 @@ function launchConfetti() {
   }
   animate();
 }
- 
+
 // ===== SWIPE =====
 let touchStartX = 0;
 document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
@@ -637,13 +637,13 @@ document.addEventListener('touchend', e => {
     else prevPage();
   }
 }, { passive: true });
- 
+
 // ===== KEYBOARD =====
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); if (currentPage === totalPages-1) showEnd(); else nextPage(); }
   if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
 });
- 
+
 // ===== INIT =====
 window.addEventListener('DOMContentLoaded', preloadImages);
 </script>
